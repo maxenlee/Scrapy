@@ -3,8 +3,7 @@
   "features": {
     "ghcr.io/devcontainers/features/python:1": {},
     "ghcr.io/kreemer/features/chrometesting:1": {},
-    "ghcr.io/deep-space-cartel/devcontainers-features/pip:1": {},
-    "ghcr.io/devcontainers/features/chromium:1": {}
+    "ghcr.io/deep-space-cartel/devcontainers-features/pip:1": {}
   },
   "customizations": {
     "vscode": {
