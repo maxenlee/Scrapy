@@ -1,0 +1,16 @@
+{
+  "name": "Selenium DevContainer",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {},
+    "ghcr.io/devcontainers/features/chromium:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  },
+  "postCreateCommand": "pip install selenium",
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "/bin/bash"
+  }
+}
