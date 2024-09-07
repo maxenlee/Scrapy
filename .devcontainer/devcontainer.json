@@ -1,27 +1,8 @@
 {
   "name": "Selenium Chrome Dev Container",
-  "image": "selenium/standalone-chrome:latest",
-  "features": {},
-  "runArgs": [
-    "--privileged",
-    "--shm-size=2g",
-    "--cap-add=SYS_ADMIN",
-    "-e", "START_XVFB=false"
-  ],
-  "containerEnv": {
-    "DISPLAY": "localhost:0"
-  },
-  "mounts": [
-    "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind"
-  ],
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-python.python",
-        "ms-azuretools.vscode-docker"
-      ]
-    }
-  },
-  "remoteUser": "selenium",
-  "postStartCommand": "google-chrome --version"
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {},
+    "ghcr.io/devcontainers/features/python:1": {}
+  }
 }
