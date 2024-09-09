@@ -1,11 +1,11 @@
 # Scrapy
 
-Project Overview
+## Project Overview
 This project is designed to scrape property information from the Bernalillo County Assessor's Office public records. The script automates searches for property data using Selenium, leveraging a brute-force search strategy to find Parcel IDs and retrieve associated data.
 
 The project is containerized using Docker to provide a consistent development environment. You can set up the project in a Docker container using Docker Desktop and the provided Dockerfile and docker-compose-dev.yaml.
 
-Repo Structure
+## Repo Structure
 ```
 .Scrapy
 ├── ABQ
@@ -16,18 +16,11 @@ Repo Structure
 ├── compose-dev.yaml            # Docker Compose configuration for development
 ├── main.py                     # Main entry script to launch the scraper
 ```
-Dev Environment Setup (Docker Desktop)
+## Dev Environment Setup (Docker Desktop)
 Step 1: Install Docker Desktop
 Make sure you have Docker Desktop installed on your machine. You can download it from the official Docker website: https://www.docker.com/products/docker-desktop.
 
-Step 2: Clone the Repository
-Clone this repository to your local machine:
-
-bash
-Copy code
-git clone <your-repo-url>
-cd <your-repo-directory>
-Step 3: Use Docker Desktop for the Dev Environment
+Step 2: Use Docker Desktop for the Dev Environment
 Docker Desktop allows you to set up a complete dev environment automatically. Here’s how to do it:
 
 Open Docker Desktop.
@@ -36,33 +29,31 @@ Click Create and point it to this repository.
 Docker will automatically use the docker-compose-dev.yaml and Dockerfile to set up the dev environment.
 Note: The docker-compose-dev.yaml and Dockerfile are already configured to build the development environment. This will include all necessary dependencies (like Selenium, ChromeDriver, etc.).
 
-How to Run the Project
+## How to Run the Project
 Once the Docker dev environment is set up, you can start using the development container to run the scraper.
 
 1. Running the Main Scraper Script
 To run the main scraper, execute the following command from the dev container's terminal:
-
-bash
-Copy code
+```
 python ABQ/property_id.py
+```
 This will initiate the scraping process, and the extracted data will be saved as a CSV file (parcel_data.csv) in the current working directory.
 
 2. Testing the Setup
 You can run the test_config.py script to verify that the Selenium setup is functioning correctly:
 
-bash
-Copy code
+```
 python ABQ/test_config.py
+```
 This script is designed to ensure that Selenium is properly configured and able to launch the browser for web scraping.
 
 3. Running Jupyter Notebooks
 You can also launch the Jupyter Notebook (Bern Co - Current.ipynb) from within the container. This can be useful for additional data exploration or testing.
 
 To launch the notebook, use the following command:
-
-bash
-Copy code
+```
 jupyter notebook --ip 0.0.0.0 --allow-root
+```
 You can then access the notebook through your web browser by visiting the URL displayed in the terminal.
 
 Understanding the Code
@@ -79,7 +70,8 @@ save_data_to_csv: Saves the extracted data to a CSV file.
 Purpose: This script serves as an alternative entry point for launching the scraper. It can be extended or modified based on your project needs.
 3. test_config.py
 Purpose: This is a simple script designed to test whether the Selenium setup is functioning correctly by launching a browser session and verifying basic interactions.
-Next Steps for Improvement
+
+## Next Steps for Improvement
 Optimizing the Search Strategy:
 
 Instead of brute-forcing through every possible prefix, consider implementing a smarter search strategy. You can start by prioritizing more likely ranges of parcel IDs or leverage previous results to skip known gaps in the numbering.
