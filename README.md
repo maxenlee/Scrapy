@@ -6,8 +6,7 @@ This project is designed to scrape property information from the Bernalillo Coun
 The project is containerized using Docker to provide a consistent development environment. You can set up the project in a Docker container using Docker Desktop and the provided Dockerfile and docker-compose-dev.yaml.
 
 Repo Structure
-bash
-Copy code
+```
 .Scrapy
 ├── ABQ
 │   ├── property_id.py         # Main Selenium script to scrape data
@@ -16,6 +15,7 @@ Copy code
 ├── Dockerfile                  # Dockerfile to containerize the scraper environment
 ├── compose-dev.yaml            # Docker Compose configuration for development
 ├── main.py                     # Main entry script to launch the scraper
+```
 Dev Environment Setup (Docker Desktop)
 Step 1: Install Docker Desktop
 Make sure you have Docker Desktop installed on your machine. You can download it from the official Docker website: https://www.docker.com/products/docker-desktop.
